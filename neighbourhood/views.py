@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render,redirect
+from django.http import HttpResponse,Http404
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def home(request):
-    return HttpResponse('Welcome to the neigbourhood')
+    return render(request,'home.html')
