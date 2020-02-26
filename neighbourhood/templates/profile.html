@@ -1,0 +1,21 @@
+{%extends "base.html"%} {% load bootstrap3 %} {% load static%}
+{% block content %}
+<head>
+</head>
+<body>
+    <div class="container">
+        {% for profiles in profile%}
+        <div class="row">
+            <div class="col-md-6">
+                <!-- <img src="{{profiles.profile_image.url}}" class="img-responsive" alt="Image"> -->
+            </div>
+            <div class="col-md-6">
+                <h1>username : {{profiles.username}}</h1>
+                <h1>bio : {{profiles.bio}}</h1>
+                <h1>contact : {{profiles.contact}}</h1>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+{% endblock %}

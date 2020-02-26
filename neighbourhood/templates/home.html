@@ -1,7 +1,15 @@
 {%extends 'base.html'%}
-
 {% block content %}
 {{block.super}}
+{% for post in posts %}
+    <h2>
+    {% autoescape on %}
+     message:{{post.message| safe}}
+    {% endautoescape %}
+</h2>
+    <h2>posted at :{{post.pub_date}}</h2>
+    <!-- <img src="{{post.message_image.url}}" class="img-responsive" alt="Image">   will add functionality of if -->
+{%endfor%}
 {% endblock %}
 
 

@@ -48,6 +48,7 @@ class Posts(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     #message_image = models.ImageField(upload_to = 'posts/')
     name=models.ForeignKey(User,on_delete=models.CASCADE)
+    
     @classmethod
     def show_posts(cls):
         posts= cls.objects.order_by('-pub_date')
